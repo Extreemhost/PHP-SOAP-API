@@ -12,9 +12,7 @@ ini_set("session.auto_start", 0);
 session_start();
 
 # 2. Load Class files
-require_once('../hcp/include/config.php');
-require_once('../hcp/include/defines.php');
-require_once('classes/class.soapserver.php');
+require_once('class/class.soapserver.php');
 
 # 3. Service
 # Make new soap server object
