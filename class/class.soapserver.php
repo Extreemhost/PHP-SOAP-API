@@ -4,33 +4,26 @@
 	# PHP SOAP SERVER
 	class SoapServerConnect
 	{
-
-		function setSecureCode($securecode)
-		{
+		private function setSecureCode($securecode) {
+			# should load DB end Config settings
 			global $database;
 			global $config;
-			#
+			
+			# MYSQLI
 			$query	= $database->query("SELECT * FROM `clients` WHERE `api_securecode` = '".$database->real_escape_string(md5(sha1(hash('SHA256', hash('SHA384', hash('SHA512', $securecode.$config['salt']))))))."' LIMIT 1");
 			$row	= $query->fetch_assoc();
-			#
-			if($key != $row['api_key'])
+			# checking if is real secure code 
+			if($securecode != $row['api_securecode'])
 			{
-				$_SESSION['key'] = $row['api_key'];
+				$_SESSION['session_securecode'] = $row['api_securecode'];
 				#
-				return '004: Succesvol<br />';
+				return '004: successful<br />';
 			}
 			else
 			{
-				return '003: Onsuccesvol<br />';
+				return '003: unsuccessful<br />';
 			}
 		}
-
-		# function to give the current date as an anwser
-		public function getDateToday()
-		{
-			return date("d-m-Y");
-		}
-
 		# default anwser when the client doesn't specify any function to call
 		public function defaultAnswer() {
 			return 'There is no functions specified to call';
