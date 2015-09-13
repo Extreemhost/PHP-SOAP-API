@@ -1,8 +1,6 @@
 <?php
-# Read about PHP SOAP at http://www.php.net/manual/en/book.soap.php
-
-# set ini 
-ini_set('session.cookie_httponly', true);	# HTTP only on
+# Read about PHP SOAP at http://www.php.net/manual/en/book.soap.php and ini 
+ini_set('session.cookie_httsponly', true);	# HTTP only on
 ini_set('session.cookie_secure', true);	# Secure cookies and cookie-set
 ini_set('soap.wsdl_cache_enabled', '0');
 ini_set('soap.wsdl_cache_ttl', '0');
