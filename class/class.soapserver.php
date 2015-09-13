@@ -4,7 +4,7 @@
 	# PHP SOAP SERVER
 	class SoapServerConnect
 	{
-		private function setSecureCode($securecode) {
+		public function setSecureCode($securecode) {
 			# should load DB end Config settings
 			global $database;
 			global $config;
@@ -24,7 +24,7 @@
 				return '003: unsuccessful<br />';
 			}
 		}
-		private function login($username, $password) {
+		public function login($username, $password) {
 			# should load DB end Config settings
 			global $database;
 			global $config;		
