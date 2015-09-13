@@ -7,5 +7,5 @@ $SoapClient = new PHPSoapClient();
 $fArgs = array('securecode' => '');
 
 # make the soap call
-echo $SoapClient->_callSoapClient('securecode', $fArgs);
+echo $SoapClient->_callSoapClient('setSecureCode', $fArgs);
 ?>
