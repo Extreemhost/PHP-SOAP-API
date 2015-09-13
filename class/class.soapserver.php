@@ -32,7 +32,7 @@
 			$query	= $database->query("SELECT * FROM `clients` WHERE `email` = '".$database->real_escape_string($username)."' AND `api_password` = '".$database->real_escape_string(md5(sha1(hash('SHA256', hash('SHA384', hash('SHA512', $password.$config['salt']))))))."' LIMIT 1");
 			$row	= $query->fetch_assoc();
 			#
-			if($row['ban'] != 0) print('045: Account blocked for administrative reasons'); else
+			if($row['accountbanned'] != 0) print('005: Account blocked for administrative reasons'); else
 			if($row['clientnr'] != '' && $row['api'] != 0)
 			{
 				$_SESSION['session_login']	=	'ok';
