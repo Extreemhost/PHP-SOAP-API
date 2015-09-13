@@ -1,10 +1,5 @@
 <?php
-# Read about PHP SOAP at http://www.php.net/manual/en/book.soap.php and ini 
-ini_set('session.cookie_httspsonly', true);	# HTTP only on
-ini_set('session.cookie_secure', true);	# Secure cookies and cookie-set
-ini_set('soap.wsdl_cache_enabled', '0');
-ini_set('soap.wsdl_cache_ttl', '0');
-ini_set("session.auto_start", 0); 
+# Read about PHP SOAP at http://www.php.net/manual/en/book.soap.php
 
 # 1. Create a Session in PHP
 session_start();
