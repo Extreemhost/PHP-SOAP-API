@@ -4,8 +4,8 @@ include_once('class/class.soapclient.php');
 # make new soap object
 $SoapClient = new PHPSoapClient();
 
-$fArgs = array('securecode' => '');
+$CallClient = array('securecode' => '');
 
 # make the soap call
-echo $SoapClient->_callSoapClient('setSecureCode', $fArgs);
+echo $SoapClient->_callSoapClient('setSecureCode', $CallClient);
 ?>
